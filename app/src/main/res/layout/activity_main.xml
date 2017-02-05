@@ -9,7 +9,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="in.gauriinfotech.resttest.MainActivity">
+    tools:context="com.resttest.MainActivity">
 
     <Button
         android:layout_width="fill_parent"
@@ -18,7 +18,8 @@
         android:textColor="#ffffff"
         android:textSize="20sp"
         android:textStyle="bold"
-        android:text="SELECT DEMO" />
+        android:text="SELECT DEMO"
+        android:onClick="selectDemo"/>
     <View
         android:layout_width="fill_parent"
         android:layout_height="20dp"/>
