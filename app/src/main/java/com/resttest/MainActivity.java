@@ -18,4 +18,9 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void showInsertDemo(View view) {
+        Intent intent = new Intent(this, InsertDemoActivity.class);
+        startActivity(intent);
+    }
+
 }

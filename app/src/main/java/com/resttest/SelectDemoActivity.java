@@ -1,5 +1,6 @@
 package com.resttest;
 
+import android.content.DialogInterface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -20,6 +21,7 @@ import java.util.Map;
 
 import in.gauriinfotech.commons.Commons;
 import in.gauriinfotech.commons.CustomRequest;
+import in.gauriinfotech.commons.Progress;
 
 public class SelectDemoActivity extends AppCompatActivity {
 
@@ -39,10 +41,14 @@ public class SelectDemoActivity extends AppCompatActivity {
             Commons.toast(this, "Please connect to internet.");
             return;
         }
-        String URL = "http://192.168.0.6:8080/JavaRestDemo/rest/Service/student/login";
+        final Progress progress = Progress.from(this).title("Please wait")
+                .message("Inserting into database...");
+        progress.display();
+        String URL = "http://192.168.0.5:8080/JavaRestDemo/rest/Service/student/login";
         CustomRequest request = CustomRequest.getInstance(URL, Request.Method.GET, null, null, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
+                progress.dismiss();
                 try {
                     JSONObject object = new JSONObject(response);
                     String status = object.getString("status");
@@ -67,6 +73,7 @@ public class SelectDemoActivity extends AppCompatActivity {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
+                progress.dismiss();
                 Log.e(tag, Log.getStackTraceString(error));
             }
         });

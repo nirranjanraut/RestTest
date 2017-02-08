@@ -30,7 +30,8 @@
         android:textColor="#ffffff"
         android:textSize="20sp"
         android:textStyle="bold"
-        android:text="INSERT DEMO" />
+        android:text="INSERT DEMO"
+        android:onClick="showInsertDemo"/>
     <View
         android:layout_width="fill_parent"
         android:layout_height="20dp"/>
