@@ -23,7 +23,7 @@ public class DeleteDemoActivity extends AppCompatActivity {
     }
 
     public void deleteRecords(View view) {
-        String URL = "http://192.168.0.7:8080/JavaRestDemo/rest/Service/student/login/username/abc/eq";
+        String URL = "http://192.168.0.4:8080/JavaRestDemo/rest/Service/student/login/username/niranjan/eq";// /lt or /gt
         CustomRequest request = CustomRequest.getInstance(URL, Request.Method.DELETE, null, null, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {

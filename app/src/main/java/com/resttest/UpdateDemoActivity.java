@@ -15,33 +15,36 @@ import com.android.volley.toolbox.Volley;
 import java.util.HashMap;
 import java.util.Map;
 
+import in.gauriinfotech.commons.Commons;
 import in.gauriinfotech.commons.CustomRequest;
 
 public class UpdateDemoActivity extends AppCompatActivity {
 
-    private EditText textName, textAddress;
+    private EditText textName, textPassword;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_update_demo);
         textName = (EditText) findViewById(R.id.textName);
-        textAddress = (EditText) findViewById(R.id.textAddress);
+        textPassword = (EditText) findViewById(R.id.textPassword);
     }
 
     public void update(View view) {
         String name = textName.getText().toString().trim();
-        String address = textAddress.getText().toString().trim();
-        String URL = "http://192.168.0.4:8080/JavaRestDemo/rest/Service/student/login/username/"+name+"/eq"; // where username=name
+        String password = textPassword.getText().toString().trim();
+        String URL = "http://192.168.0.4:8080/JavaRestDemo/rest/Service/student/login/username/"+name+"/eq";
         Map<String, String> params = new HashMap<>();
-        params.put("password", address);
+        params.put("password", password);
         CustomRequest request = CustomRequest.getInstance(URL, Request.Method.PUT, params, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 Log.e("UpdateDemo", response);
+                Commons.toast(UpdateDemoActivity.this, "Success");
             }
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
+                Commons.toast(UpdateDemoActivity.this, "Failed");
                 Log.e("UpdateDemo", Log.getStackTraceString(error));
             }
         }, "?", "=", "&");
