@@ -42,7 +42,8 @@
         android:textColor="#ffffff"
         android:textSize="20sp"
         android:textStyle="bold"
-        android:text="UPDATE DEMO" />
+        android:text="UPDATE DEMO"
+        android:onClick="update"/>
     <View
         android:layout_width="fill_parent"
         android:layout_height="20dp"/>
@@ -53,6 +54,7 @@
         android:textColor="#ffffff"
         android:textSize="20sp"
         android:textStyle="bold"
-        android:text="DELETE DEMO" />
+        android:text="DELETE DEMO"
+        android:onClick="delete" />
 
 </LinearLayout>

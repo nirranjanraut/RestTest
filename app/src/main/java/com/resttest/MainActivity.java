@@ -23,4 +23,14 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void delete(View view) {
+        Intent intent = new Intent(this, DeleteDemoActivity.class);
+        startActivity(intent);
+    }
+
+    public void update(View view) {
+        Intent intent = new Intent(this, UpdateDemoActivity.class);
+        startActivity(intent);
+    }
+
 }

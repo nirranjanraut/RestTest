@@ -19,7 +19,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".SelectDemoActivity" />
-        <activity android:name=".InsertDemoActivity"></activity>
+        <activity android:name=".InsertDemoActivity" />
+        <activity android:name=".DeleteDemoActivity" />
+        <activity android:name=".UpdateDemoActivity"></activity>
     </application>
 
 </manifest>
