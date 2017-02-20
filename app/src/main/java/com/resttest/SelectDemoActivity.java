@@ -44,7 +44,7 @@ public class SelectDemoActivity extends AppCompatActivity {
         final Progress progress = Progress.from(this).title("Please wait")
                 .message("Inserting into database...");
         progress.display();
-        String URL = "http://192.168.0.4:8080/JavaRestDemo/rest/Service/student/login";
+        String URL = "http://192.168.1.100:8080/JavaRestDemo/rest/Service/student/login";
         CustomRequest request = CustomRequest.getInstance(URL, Request.Method.GET, null, null, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
@@ -91,7 +91,7 @@ public class SelectDemoActivity extends AppCompatActivity {
             Commons.toast(this, "Please connect to internet.");
             return;
         }
-        String URL = "http://192.168.0.7:8080/JavaRestDemo/rest/Service/student/login";
+        String URL = "http://192.168.1.100:8080/JavaRestDemo/rest/Service/student/login";
         Map<String, String> params = new HashMap<>();
         params.put("username", name);
         CustomRequest request = CustomRequest.getInstance(URL, Request.Method.GET, params, new Response.Listener<String>() {

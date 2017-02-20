@@ -32,7 +32,7 @@ public class UpdateDemoActivity extends AppCompatActivity {
     public void update(View view) {
         String name = textName.getText().toString().trim();
         String password = textPassword.getText().toString().trim();
-        String URL = "http://192.168.0.4:8080/JavaRestDemo/rest/Service/student/login/username/"+name+"/eq";
+        String URL = "http://192.168.1.100:8080/JavaRestDemo/rest/Service/student/login/username/"+name+"/eq";
         Map<String, String> params = new HashMap<>();
         params.put("password", password);
         CustomRequest request = CustomRequest.getInstance(URL, Request.Method.PUT, params, new Response.Listener<String>() {
